@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/corolla-unit-converter/precache-manifest.cf72eb4e9ce20af9333d93aca6c5fa8f.js"
+  "/corolla-unit-converter/precache-manifest.6c258b0fd0ca07f03144ba923b07f6dc.js"
 );
 
 self.addEventListener('message', (event) => {
