@@ -11,10 +11,10 @@ export const corolla = {
 };
 
 const lengthsourceUnits = [
-  { name: "meters", ratio: 0.01 },
+  { name: "meters", ratio: 100 },
   { name: "centimeters", ratio: 1 },
-  { name: "milimeters", ratio: 10 },
-  { name: "kilometers", ratio: 0.00001 }
+  { name: "milimeters", ratio: 0.01 },
+  { name: "kilometers", ratio: 100000 }
 ];
 
 export const units = [
@@ -30,7 +30,7 @@ export const units = [
     name: "mass",
     sourceUnits: [
       { name: "kilograms", ratio: 1 },
-      { name: "tons", ratio: 0.001 }
+      { name: "tons", ratio: 1000 }
     ]
   }
 ];
@@ -39,6 +39,7 @@ export const convertUnitToCorolla = (category, unit, value) => {
   const ratio = units
     .find(({ name }) => name === category)
     .sourceUnits.find(({ name }) => name === unit).ratio;
-  console.log(category, unit, value, ratio);
-  return value / ratio / corolla[category];
+  const corollas = (value * ratio) / corolla[category];
+  console.log(category, unit, value, ratio, corollas);
+  return corollas;
 };

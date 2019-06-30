@@ -8,22 +8,38 @@ export default class ConvertorContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      unit: units.find(({ name }) => name === this.props.category)
-        .sourceUnits[0].name,
+      unit: this.getUnit(),
       corollas: 0,
       currentVal: 0
     };
   }
 
-  getCorollas = val =>
-    convertUnitToCorolla(this.props.category, this.state.unit, val);
+  componentDidUpdate(prevProps) {
+    if (prevProps.category !== this.props.category) {
+      const unit = this.getUnit();
+      const corollas = this.getCorollas(this.state.currentVal, unit);
+      this.setState({ unit, corollas });
+    }
+  }
+
+  getUnit = () =>
+    units.find(({ name }) => name === this.props.category).sourceUnits[0].name;
+
+  getCorollas = (val, unit = undefined) =>
+    convertUnitToCorolla(
+      this.props.category,
+      unit ? unit : this.state.unit,
+      val
+    );
 
   onSelectUnit = unit => {
-    this.setState({ unit, corollas: this.getCorollas(this.state.currentVal) });
+    const corollas = this.getCorollas(this.state.currentVal, unit);
+    this.setState({ unit, corollas });
   };
 
   onChangeValue = val => {
-    this.setState({ currentVal: val, corollas: this.getCorollas(val) });
+    const corollas = this.getCorollas(val);
+    this.setState({ currentVal: val, corollas });
   };
 
   render() {
