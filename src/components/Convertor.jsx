@@ -20,33 +20,71 @@ export default function Convertor({
   const selectedCategory = categories.find(({ name }) => name === category);
   return (
     <div>
-      <h2>{category}</h2>
       {selectedCategory && selectedCategory.label && (
-        <h3>{selectedCategory.label}</h3>
+        <h3 className="subtitle is-5 has-text-centered">
+          {selectedCategory.label}
+        </h3>
       )}
-      <span>
-        <input
-          type="number"
-          className="source"
-          onChange={e => onChangeValue(e.target.value)}
-        />
-        <select onChange={e => onSelectUnit(e.target.value)}>
-          {selectedCategory &&
-            selectedCategory.units.map(({ name }) => (
-              <option key={name} value={name}>
-                {name}
-              </option>
-            ))}
-        </select>
-      </span>
-      <span> = </span>
-      <input
-        type="text"
-        className="result"
-        value={parseFloat(corollas).toFixed(2)}
-        readOnly
-      />
-      <span>Corollas</span>
+      <div className="columns is-mobile">
+        <div className="column">
+          <div className="columns is-gapless">
+            <div className="column">
+              <div class="field is-horizontal">
+                <div class="control">
+                  <input
+                    type="number"
+                    className="input"
+                    onChange={e => onChangeValue(e.target.value)}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="column">
+              <div class="field is-horizontal">
+                <div class="control">
+                  <div className="select">
+                    <select
+                      onChange={e => onSelectUnit(e.target.value)}
+                      className="is-capitalized"
+                    >
+                      {selectedCategory &&
+                        selectedCategory.units.map(({ name }) => (
+                          <option key={name} value={name}>
+                            {name}
+                          </option>
+                        ))}
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="column is-1">
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label has-text-centered">=</label>
+            </div>
+          </div>
+        </div>
+        <div className="column">
+          <div class="field is-horizontal">
+            <div class="control">
+              <input
+                type="text"
+                className="input"
+                value={parseFloat(corollas).toFixed(2)}
+                readOnly
+              />
+            </div>
+            <div class="field-label is-normal">
+              <label class="label has-text-left" style={{ marginLeft: 20 }}>
+                2018 Toyota Corollas
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

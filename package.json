@@ -1,11 +1,12 @@
 {
-  "name": "new",
+  "name": "corolla-unit-converter",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
     "@babel/runtime": "7.4.5",
+    "bulma": "0.7.5",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-scripts": "3.0.1"

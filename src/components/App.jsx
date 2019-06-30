@@ -12,10 +12,12 @@ export default function App() {
   const [category, setCategory] = useState(categories[0].name);
 
   return (
-    <div className="App">
-      <h1>Toyota Corolla unit converter!</h1>
+    <>
+      <h1 className="title has-text-centered">
+        Toyota Corolla unit converter!
+      </h1>
       <CategorySelector onChange={setCategory} />
       <ConvertorContainer category={category} />
-    </div>
+    </>
   );
 }
