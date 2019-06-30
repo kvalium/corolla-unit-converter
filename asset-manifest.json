@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/corolla-unit-converter/static/js/main.68076e2d.chunk.js",
+    "main.js.map": "/corolla-unit-converter/static/js/main.68076e2d.chunk.js.map",
+    "runtime~main.js": "/corolla-unit-converter/static/js/runtime~main.7133e7d8.js",
+    "runtime~main.js.map": "/corolla-unit-converter/static/js/runtime~main.7133e7d8.js.map",
+    "static/js/2.26ba37d3.chunk.js": "/corolla-unit-converter/static/js/2.26ba37d3.chunk.js",
+    "static/js/2.26ba37d3.chunk.js.map": "/corolla-unit-converter/static/js/2.26ba37d3.chunk.js.map",
+    "index.html": "/corolla-unit-converter/index.html",
+    "precache-manifest.cf72eb4e9ce20af9333d93aca6c5fa8f.js": "/corolla-unit-converter/precache-manifest.cf72eb4e9ce20af9333d93aca6c5fa8f.js",
+    "service-worker.js": "/corolla-unit-converter/service-worker.js"
+  }
+}
