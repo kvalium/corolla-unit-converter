@@ -40,5 +40,5 @@ export const convertUnitToCorolla = (category, unit, value) => {
     .find(({ name }) => name === category)
     .sourceUnits.find(({ name }) => name === unit).ratio;
   console.log(category, unit, value, ratio);
-  return (value / ratio / corolla[category]).toFixed(2);
+  return value / ratio / corolla[category];
 };
