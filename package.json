@@ -1,8 +1,9 @@
 {
   "name": "corolla-unit-converter",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
+  "author": "Julien Monchany <julien.monchany@gmail.com>",
+  "description": "This app converts units (centimeters, kilograms, etc.) to 2018 Toyota Corolla related specs.",
+  "keywords": ["react"],
   "main": "src/index.js",
   "homepage": "https://kvalium.github.io/corolla-unit-converter",
   "dependencies": {
